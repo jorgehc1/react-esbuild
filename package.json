@@ -1,15 +1,14 @@
 {
-  "name": "fe-kinnemed",
+  "name": "react-esbuild",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/scripts/start.mjs",
-    "build": "node ./src/scripts/build.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node ./src/scripts/build.mjs"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
