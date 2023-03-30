@@ -1,0 +1,28 @@
+{
+  "name": "fe-kinnemed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/scripts/start.mjs",
+    "build": "node ./src/scripts/build.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.15",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "esbuild": "^0.17.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "esbuild-sass-plugin": "^2.8.0",
+    "postcss": "^8.4.21"
+  }
+}
