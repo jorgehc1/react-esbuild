@@ -1,12 +1,23 @@
-import React,{Component} from 'react';
+import React,{Component} from "react";
+import {Route,Routes} from "react-router-dom";
 import {createTheme,ThemeProvider} from "@mui/material/styles";
 
+import Inicio from "./pages/Inicio";
+import Error404 from "./pages/Error404";
+
 let theme = createTheme({
-    palette: {
+    palette:{
         primary: {
-            light: '#63ccff',
-            main: '#009be5',
-            dark: '#006db3',
+            light: '#757ce8',
+            main: '#3f50b5',
+            dark: '#002884',
+            contrastText: '#fff',
+        },
+        secondary: {
+            light: '#ff7961',
+            main: '#f44336',
+            dark: '#ba000d',
+            contrastText: '#000',
         },
     },
     typography: {
@@ -33,17 +44,19 @@ let theme = createTheme({
     },
 });
 
-
 class App extends Component {
 
     constructor(props){
         super(props);
     }
 
-    render(): React.ReactNode {
+    render() {
         return(
         <ThemeProvider theme={theme}>
-            <h1>AAB</h1>
+            <Routes>
+                <Route path="/" element={<Inicio/>} />
+                <Route path="*" element={<Error404/>} />
+            </Routes>
         </ThemeProvider>
         );
     }

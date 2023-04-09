@@ -1,18 +1,18 @@
 import React,{Component} from 'react';
 
-class Login extends Component {
+class Error404 extends Component {
 
     constructor(props){
         super(props);
     }
 
-    render(): React.ReactNode {
+    render() {
         return(
         <>
-            <h1>AAB</h1>
+            <h1>40466</h1>
         </>
         );
     }
 }
 
-export default Login;
+export default Error404;
