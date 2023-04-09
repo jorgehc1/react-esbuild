@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/scripts/start.mjs",
-    "build": "node ./src/scripts/build.mjs"
+    "start": "node esbuild.mjs -start",
+    "build": "node esbuild.mjs -build",
+    "serve": "node esbuild.mjs -serve"
   },
   "author": "",
   "license": "MIT",

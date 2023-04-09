@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        //"module": "commonjs",
+        //"target": "ESNext",
+        "lib": ["es6", "dom"],
+        "sourceMap": true,
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react",
+        "typeRoots": ["node_modules/@types"]
+    },
+    "include": [
+      "src",
+      ".d.ts",
+    ],
+    "exclude": [
+      "src/scripts/**/*",
+      "node_modules",
+      "dist"
+    ],
+  }
