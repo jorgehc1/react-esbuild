@@ -30,6 +30,7 @@
     "@types/react-fontawesome": "^1.6.5",
     "@types/react-router-dom": "^5.3.3",
     "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "formik": "^2.2.9",
     "graphql": "^16.6.0",
@@ -47,10 +48,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
     "esbuild": "^0.17.15",
+    "esbuild-envfile-plugin": "^1.0.5",
     "esbuild-plugin-inline-image": "^0.0.9",
     "esbuild-plugin-svgr": "^1.1.0",
-    "esbuild-sass-plugin": "^2.8.0"
+    "esbuild-sass-plugin": "^2.8.0",
+    "postcss": "^8.4.21"
   }
 }

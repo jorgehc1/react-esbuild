@@ -1,5 +1,7 @@
+import * as dotenv from "dotenv";
 import esbuild from "esbuild";
 import {exec} from "child_process";
+import envFilePlugin from "esbuild-envfile-plugin";
 import * as fs from "fs";
 import path from 'path';
 import {fileURLToPath} from 'url';
@@ -10,8 +12,12 @@ import {sassPlugin} from "esbuild-sass-plugin";
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 
-const host = "localhost";
-const port = 8000;
+dotenv.config();
+
+const host_local = process.env.HOST_LOCAL;
+const port_local = process.env.PORT_LOCAL;
+const host_proxy = process.env.HOST_PROXY;
+const port_proxy = process.env.PORT_PROXY;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
@@ -48,6 +54,7 @@ if(process.argv[2] && process.argv[2] === '-build') {
         format: 'esm',
         allowOverwrite: true,
         plugins: [
+            envFilePlugin
         ],
         external: ['/images/*'],
         define:{
@@ -103,6 +110,7 @@ if(process.argv[2] && process.argv[2] === '-build') {
         format: 'esm',
         allowOverwrite: true,
         plugins: [
+            envFilePlugin
         ],
         external: ['/images/*'],
         define:{
@@ -127,7 +135,7 @@ if(process.argv[2] && process.argv[2] === '-build') {
     const app = express();
     app.use(express.static(path.join(__dirname, "public")));
 
-    app.use(createProxyMiddleware("/graphql", {target:"http://127.0.0.1:45222"}));
+    app.use(createProxyMiddleware("/graphql", {target:`http://${host_proxy}:${port_proxy}`}));
 
     const renderIndex = (req, res) => {
         res.sendFile(path.resolve(__dirname, "public/index.html"));
@@ -135,7 +143,7 @@ if(process.argv[2] && process.argv[2] === '-build') {
 
     app.get('/*', renderIndex);
 
-    app.listen(port, host, () => {
+    app.listen(port_local, host_local, () => {
         let msg = `Listening on: http://${host}:${port}`;
         console.log(msg);
     });
