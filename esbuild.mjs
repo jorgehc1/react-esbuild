@@ -144,7 +144,7 @@ if(process.argv[2] && process.argv[2] === '-build') {
     app.get('/*', renderIndex);
 
     app.listen(port_local, host_local, () => {
-        let msg = `Listening on: http://${host}:${port}`;
+        let msg = `Listening on: http://${host_local}:${port_local}`;
         console.log(msg);
     });
 
